@@ -1,40 +1,33 @@
-# create-svelte
+# Svelte-stopwatch
 
-Everything you need to build a Svelte project, powered by [`create-svelte`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+A Svelte timer component with a countdown option and events for start, stop and reset of the timer.
 
-## Creating a project
+TODO: [`Live demo`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
 
-If you're seeing this, you've probably already done this step. Congrats!
-
-```bash
-# create a new project in the current directory
-npm init svelte@next
-
-# create a new project in my-app
-npm init svelte@next my-app
-```
-
-> Note: the `@next` is temporary
-
-## Developing
-
-Once you've created a project and installed dependencies with `npm install` (or `pnpm install` or `yarn`), start a development server:
+## Installation
 
 ```bash
-npm run dev
-
-# or start the server and open the app in a new browser tab
-npm run dev -- --open
+npm install svelte-stopwatch
 ```
 
-## Building
+## Props
 
-To create a production version of your app:
+All props are optional.
 
-```bash
-npm run build
-```
+| Name                 | Default | Description                                                                                       |
+| -------------------- | ------- | ------------------------------------------------------------------------------------------------- |
+| `seconds`            | 0       | The number of seconds to count down. If no value is provided the timer will count up (stopwatch). |
+| `timeDisplayClasses` | ''      | String containing one or more classes to style the time displayed as HH:MM:SS.                    |
+| `startButtonClasses` | ''      | String containing one or more classes to style the start/pause button.                            |
+| `resetButtonClasses` | ''      | String containing one or more classes to style the time reset button.                             |
 
-You can preview the production build with `npm run preview`.
+**NB:** In Svelte a component's child components will not inherit its styles. The classes that are sent in to the classes props therefore need to be global. This can be acheived via Svelte's `<style global>` option, by CSS' global option (`:global(.className) { ... }`), or by adding the classes in a globa stylesheet, e.g. `app.css`.
 
-> To deploy your app, you may need to install an [adapter](https://kit.svelte.dev/docs/adapters) for your target environment.
+## Events
+
+| Name       | Description                             |
+| ---------- | --------------------------------------- |
+| `finished` | Timer is 0 (when using countdown timer) |
+| `started`  | Timer has been started.                 |
+| `stopped`  | Timer has been stopped.                 |
+| `reset`    | Timer has been reset.                   |
