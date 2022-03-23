@@ -1,8 +1,8 @@
 # Svelte-stopwatch
 
-A Svelte timer component with a countdown option and events for start, stop and reset of the timer.
+A Svelte timer component with a countdown option and events for start, sto, finished and reset of the timer.
 
-TODO: [`Live demo`](https://github.com/sveltejs/kit/tree/master/packages/create-svelte).
+[`Live demo`](https://svelte-stopwatch.netlify.app/).
 
 ## Installation
 
